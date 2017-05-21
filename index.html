@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zapr Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+
+        <div class="pull-right top-bar-nav">
+         <span class="icon-bar fa fa-gamepad fa-2x"></span>
+         <span class="icon-bar fa fa-github fa-2x"><a href="https://github.com/Saikat-Sinha" target="_blank"></a></span>
+         <span class="icon-bar fa fa-behance fa-2x"><a href="https://www.behance.net/asksaikatsinha" target="_blank"></a></span>
+         <span class="icon-bar fa fa-linkedin fa-2x"><a href="https://www.linkedin.com/in/saikat-sinha/" target="_blank"></a></span>
+       </div>
+       <div class="small-logo-container">
+         <a class="small-logo" href="#"><span class="top-sym">↸</span>
+         zapr</a>
+       </div>
+     </div>
+     <div class="navbar-collapse collapse">
+
+       <ul class="nav navbar-nav navbar-right">
+         <li class="active"><a href="#"><i class="fa fa-gamepad fa-2x" aria-hidden="true"></i></a></li>
+         <li><a href="https://github.com/Saikat-Sinha" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
+         <li><a href="https://www.behance.net/asksaikatsinha" target="_blank"><i class="fa fa-behance fa-2x" aria-hidden="true"></i></a></li>
+         <li><a href="https://www.linkedin.com/in/saikat-sinha/" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
+       </ul>
+     </div><!--/.nav-collapse -->
+   </div>
+ </div>
+
+ <div class="container-fluid big-logo-row">
+   <div class="container">
+     <div class="row">
+       <div class="col-xs-6 big-logo-container">
+         <h1 class="big-logo">
+           <span class="top-sym">↸</span>
+           zapr
+         </h1>
+       </div><!--/.col-xs-12 -->
+       <div class="col-xs-3 game-control">
+         <h4><b>Game Controls:</b></h4>
+         <div class="row">
+         <span id="up" onclick="clickMove('38')"><i class="fa fa-caret-square-o-up fa-3x col-xs-3" aria-hidden="true"></i></span>
+         <span id="down" onclick="clickMove('40')"><i class="fa fa-caret-square-o-down fa-3x col-xs-3" aria-hidden="true"></i></span>
+
+       </div>
+       <div class="row">
+         <span id="left" onclick="clickMove('37')"><i class="fa fa-caret-square-o-left fa-3x col-xs-3" aria-hidden="true"></i></span>
+         <span id="right" onclick="clickMove('39')"><i class="fa fa-caret-square-o-right fa-3x col-xs-3" aria-hidden="true"></i></span>
+
+       </div>
+       </div>
+       <div class="col-xs-3 shuffle">
+         <h4><b>Shuffle:</b></h4>
+         <div onclick="populate(); for(var i=1; i<=16; i++){if(document.getElementById(i).innerHTML == '16'){document.getElementById(i).innerHTML='';}}">
+         <i class="fa fa-random fa-2x" aria-hidden="true"></i>
+       </div>
+       </div>
+     </div><!--/.row -->
+   </div><!--/.container -->
+ </div><!--/.container-fluid -->
+<div class="container-fluid">
+
+  <div class="container">
+    <div class="row">
+
+          <div class="col-md-4">
+            <div>
+              <button type="button" class="btn btn-warning" id="undo" style="margin-top: 20px" onclick="doUndo();">Undo</button>
+              <button type="button" class="btn btn-danger" id="answer" style="margin-top: 20px" onclick="doAnswer();">Auto-Solve</button>
+              <h4 style="color: white; padding-top: 10px;">Moves:</h4>
+              <div id="comment" style="color: white"></div>
+
+            </div>
+          </div>
+    <div class="game-container col-md-8">
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-element" id="1"></div>
+          <div class="grid-element" id="2"></div>
+          <div class="grid-element" id="3"></div>
+          <div class="grid-element" id="4"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-element" id="5"></div>
+          <div class="grid-element" id="6"></div>
+          <div class="grid-element" id="7"></div>
+          <div class="grid-element" id="8"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-element" id="9"></div>
+          <div class="grid-element" id="10"></div>
+          <div class="grid-element" id="11"></div>
+          <div class="grid-element" id="12"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-element" id="13"></div>
+          <div class="grid-element" id="14"></div>
+          <div class="grid-element" id="15"></div>
+          <div class="grid-element" id="16"></div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  </div>
+  </body>
+</html>
